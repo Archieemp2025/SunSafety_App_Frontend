@@ -65,17 +65,20 @@ button {
 }
 
 .app-shell {
-  max-width: 1180px;
-  margin: 0 auto;
-  background: var(--color-shell-bg);
-  border-radius: var(--radius-shell);
-  padding: var(--space-shell-y) var(--space-shell-x) 28px;
+    width: 100%;
+    max-width: 14000px;
+    margin: 0 auto;
+    background: var(--color-shell-bg);
+    border-radius: var(--radius-shell);
+    padding: var(--space-shell-y) var(--space-shell-x) 28px;
 }
 
 .card {
-  background: var(--color-card-bg);
-  border-radius: var(--radius-card);
-  padding: var(--space-card);
+    width: 100%;
+    background: var(--color-card-bg);
+    border-radius: var(--radius-card);
+    padding: var(--space-card);
+    box-shadow: var(--shadow-card);
 }
 
 .section-title {

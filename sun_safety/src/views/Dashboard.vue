@@ -33,14 +33,23 @@ const logout = () => {
     
 <style scoped>
     .dashboard-top-bar{
-        margin-bottom: 22px;
+        margin-bottom: 28px;
     }
-    @media (max-width: 980px){
-            .charts-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 28px;
-        }
+    .charts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(420px, 1fr));
+    gap: 28px;
+    align-items: stretch;
     }
-    
+
+    .charts-grid > * {
+    min-width: 0;
+    }
+
+    @media (max-width: 980px) {
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+    }
+        
 </style>

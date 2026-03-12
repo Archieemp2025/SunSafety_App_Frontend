@@ -252,12 +252,19 @@ watch(selectedAgeGroup, async (newValue, oldValue) => {
 </template>
 
 <style scoped>
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .chart-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 18px;
   margin-bottom: 18px;
+  min-height: 88px;
 }
 
 .chart-title {
@@ -294,6 +301,7 @@ watch(selectedAgeGroup, async (newValue, oldValue) => {
 }
 
 .chart-wrapper {
+    flex: 1;
   height: 360px;
 }
 

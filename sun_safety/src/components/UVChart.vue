@@ -30,34 +30,6 @@ const isLoading = ref(true)
 const errorMessage = ref('')
 const uvData = ref([])
 
-// const fetchUvSummary = async () => {
-//   try {
-//     isLoading.value = true
-//     errorMessage.value = ''
-
-//     const response = await fetch(uvApiUrl, {
-//   headers: {
-//     'ngrok-skip-browser-warning': '1',
-//   },
-// })
-
-//     if (!response.ok) {
-//       throw new Error(`Failed to fetch UV data: ${response.status}`)
-//     }
-
-//     const data = await response.json()
-
-//     if (!Array.isArray(data)) {
-//       throw new Error('Unexpected API response format.')
-//     }
-
-//     uvData.value = data
-//   } catch (error) {
-//     errorMessage.value = error.message || 'Unable to load UV chart data.'
-//   } finally {
-//     isLoading.value = false
-//   }
-// }
 
 const fetchUvSummary = async () => {
   try {
@@ -221,8 +193,10 @@ const chartOptions = computed(() => {
 
 <template>
   <div class="card">
-    <h2 class="chart-title">UV Index Range</h2>
-    <p class="chart-subtitle">Annual comparison showing UV Index range</p>
+    <div class="chart-head">
+        <h2 class="chart-title">UV Index Range</h2>
+        <p class="chart-subtitle">Annual comparison showing UV Index range</p>
+    </div>
 
     <div v-if="isLoading" class="chart-state">Loading UV chart...</div>
     <div v-else-if="errorMessage" class="chart-state error-text">
@@ -240,6 +214,15 @@ const chartOptions = computed(() => {
 </template>
 
 <style scoped>
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-head {
+  min-height: 88px;
+}
 .chart-title {
   margin: 0 0 6px;
   font-size: 2rem;
@@ -253,11 +236,13 @@ const chartOptions = computed(() => {
 }
 
 .chart-wrapper {
+    flex: 1;
   height: 360px;
 }
 
 .chart-state {
-  height: 360px;
+  flex: 1;
+  min-height: 360px;
   display: flex;
   align-items: center;
   justify-content: center;
