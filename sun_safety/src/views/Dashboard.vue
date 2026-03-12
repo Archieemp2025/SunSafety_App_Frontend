@@ -1,7 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import UVChart from '../components/UVChart.vue'
-
+import CancerTrendChart from '../components/CancerTrendChart.vue'
 const router = useRouter()
 
 const logout = () => {
@@ -21,8 +21,12 @@ const logout = () => {
 
             <button class="btn-dark" @click="logout">Logout</button>
         </div>
-
-        <UVChart />
+        
+        <div class = "charts-grid">
+            <CancerTrendChart />
+            <UVChart />
+        </div>
+        
         </div>
     </div>
 </template>
@@ -31,4 +35,12 @@ const logout = () => {
     .dashboard-top-bar{
         margin-bottom: 22px;
     }
+    @media (max-width: 980px){
+            .charts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+    }
+    
 </style>
