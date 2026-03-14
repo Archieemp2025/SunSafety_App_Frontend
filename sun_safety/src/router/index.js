@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Login from '../views/Login.vue'
 import Dashboard from '../views/Dashboard.vue'
+import SharePage from '../views/SharePage.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -16,6 +17,11 @@ const router = createRouter({
             name: 'dashboard',
             component: Dashboard,
             meta: { requiresAuth: true },
+        },
+        {
+            path: '/share',
+            name: 'share',
+            component: SharePage,
         },
     ],
 })

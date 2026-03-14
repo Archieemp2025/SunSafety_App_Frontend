@@ -24,7 +24,8 @@ ChartJS.register(
   Filler,
 )
 
-const uvApiUrl = 'https://cityfied-warmish-gena.ngrok-free.dev/api/uv/year-summary'
+const uvApiUrl ='https://sunsafetyapp-backend-api.onrender.com/api/uv/year-summary'
+// const uvApiUrl = 'https://cityfied-warmish-gena.ngrok-free.dev/api/uv/year-summary'
 
 const isLoading = ref(true)
 const errorMessage = ref('')

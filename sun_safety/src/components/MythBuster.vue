@@ -1,5 +1,8 @@
 <script setup>
+import { useRouter } from 'vue-router'
+const router = useRouter()
 const mythCards = [
+
   {
     id: 1,
     myth: "Cool skin doesn't mean safe skin",
@@ -16,6 +19,17 @@ const mythCards = [
     fact: 'Sun damage is still showing up in young Australians.',
   },
 ]
+
+const openSharePage = (card) => {
+  router.push({
+    path: 'share',
+    query: {
+      myth: card.myth,
+      fact: card.fact,
+    },
+  })
+}
+
 </script>
 
 <template>
@@ -37,7 +51,7 @@ const mythCards = [
           <p class="fact-text">{{ card.fact }}</p>
         </div>
 
-        <button class="share-btn" type="button">Share this</button>
+        <button class="share-btn" type="button"  @click="openSharePage(card)">Share this</button>
       </article>
     </div>
   </section>
@@ -136,11 +150,5 @@ const mythCards = [
   font-size: 0.95rem;
   cursor: pointer;
 }
-.myth-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 260px);
-  justify-content: center;
-  gap: 28px;
-  margin-top: 24px;
-}
+
 </style>

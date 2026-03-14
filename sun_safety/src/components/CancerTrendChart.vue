@@ -13,8 +13,11 @@ import {
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
-const ageGroupsUrl = 'https://cityfied-warmish-gena.ngrok-free.dev/api/age-groups'
-const melanomaUrl = 'https://cityfied-warmish-gena.ngrok-free.dev/api/melanoma/incidence'
+const ageGroupsUrl = 'https://sunsafetyapp-backend-api.onrender.com/api/age-groups'
+const melanomaUrl = 'https://sunsafetyapp-backend-api.onrender.com/api/melanoma/incidence'
+
+// const ageGroupsUrl = 'https://cityfied-warmish-gena.ngrok-free.dev/api/age-groups'
+// const melanomaUrl = 'https://cityfied-warmish-gena.ngrok-free.dev/api/melanoma/incidence'
 
 const isLoadingAgeGroups = ref(true)
 const isLoadingChart = ref(true)
