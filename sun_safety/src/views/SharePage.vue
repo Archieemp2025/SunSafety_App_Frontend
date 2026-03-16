@@ -64,7 +64,16 @@ const shareToMessenger = async () => {
 }
 
 const shareToWhatsApp = async () => {
-  await openNativeShare()
+    const message = encodeURIComponent(
+        `UV Reality - Share the Truth
+
+    Myth: ${myth.value}
+    Fact: ${fact.value}
+
+    Learn more: ${shareLink.value}`
+    )
+
+    window.open(`https://wa.me/?text=${message}`, '_blank')
 }
 
 const shareToFacebookFeed = async () => {

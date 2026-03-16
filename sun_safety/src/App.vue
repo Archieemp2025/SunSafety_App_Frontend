@@ -1,5 +1,11 @@
-<script setup></script>
+<script setup>
+import { RouterView } from 'vue-router'
+</script>
 
 <template>
-  <router-view />
+  <RouterView v-slot="{ Component }">
+    <KeepAlive include="Dashboard">
+      <component :is="Component" />
+    </KeepAlive>
+  </RouterView>
 </template>

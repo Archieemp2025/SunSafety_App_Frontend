@@ -1,4 +1,9 @@
 <script setup>
+
+defineOptions({
+  name: 'Dashboard',
+})
+
 import { useRouter } from 'vue-router'
 import UVChart from '../components/UVChart.vue'
 import CancerTrendChart from '../components/CancerTrendChart.vue'
