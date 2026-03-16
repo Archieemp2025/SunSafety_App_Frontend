@@ -200,7 +200,16 @@ const goBack = () => {
 
       <div class="share-actions">
         <button class="share-now-btn" type="button" @click="shareNow">
-          Share Now
+            <span class="share-now-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="share-now-icon-svg">
+                <circle cx="6" cy="12" r="2.6" fill="currentColor" />
+                <circle cx="18" cy="6" r="2.6" fill="currentColor" />
+                <circle cx="18" cy="18" r="2.6" fill="currentColor" />
+                <line x1="8.2" y1="11" x2="15.6" y2="7.1" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+                <line x1="8.2" y1="13" x2="15.6" y2="16.9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+                </svg>
+            </span>
+            <span>Share Now</span>
         </button>
         <button class="back-btn" type="button" @click="goBack">
           Back
@@ -390,6 +399,10 @@ const goBack = () => {
   font-size: 1.2rem;
   font-weight: 800;
   cursor: pointer;
+   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .back-btn {
@@ -550,5 +563,18 @@ const goBack = () => {
 .messenger-icon {
   background: #1e88ff;
   color: #ffffff;
+}
+
+.share-now-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.share-now-icon-svg {
+  width: 18px;
+  height: 18px;
+  display: block;
 }
 </style>
