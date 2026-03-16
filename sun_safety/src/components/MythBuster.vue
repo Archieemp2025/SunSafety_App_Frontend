@@ -22,7 +22,7 @@ const mythCards = [
 
 const openSharePage = (card) => {
   router.push({
-    path: 'share',
+    path: '/share',
     query: {
       myth: card.myth,
       fact: card.fact,
@@ -60,8 +60,12 @@ const openSharePage = (card) => {
 <style scoped>
 .myth-section {
   width: 100%;
-  margin: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px 40px;
+  box-sizing: border-box;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .myth-title {
@@ -78,14 +82,16 @@ const openSharePage = (card) => {
 
 .myth-grid {
   display: grid;
-  grid-template-columns: repeat(3, 260px);
-  justify-content: center;
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  width: 100%;
   margin-top: 24px;
+  align-items: stretch;
 }
 
 .myth-card {
   width: 100%;
+  min-width: 0;
   background: #ffffff;
   border: 1px solid #e4ddd7;
   border-radius: 14px;
@@ -96,6 +102,7 @@ const openSharePage = (card) => {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .myth-line {
@@ -128,6 +135,8 @@ const openSharePage = (card) => {
 .fact-text {
   margin: 0;
   line-height: 1.45;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .myth-text {
@@ -149,6 +158,27 @@ const openSharePage = (card) => {
   color: #6a625c;
   font-size: 0.95rem;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
+@media (max-width: 900px) {
+  .myth-grid {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .myth-section {
+    padding: 28px 12px 36px;
+  }
+
+  .myth-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .myth-card {
+    min-height: auto;
+  }
+}
 </style>
