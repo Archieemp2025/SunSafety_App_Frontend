@@ -55,13 +55,7 @@ const openNativeShare = async () => {
   }
 }
 
-const shareToInstagram = async () => {
-  await openNativeShare()
-}
 
-const shareToMessenger = async () => {
-  await openNativeShare()
-}
 
 const shareToWhatsApp = async () => {
     const message = encodeURIComponent(
@@ -76,9 +70,6 @@ const shareToWhatsApp = async () => {
     window.open(`https://wa.me/?text=${message}`, '_blank')
 }
 
-const shareToFacebookFeed = async () => {
-  await openNativeShare()
-}
 
 const shareNow = async () => {
   await openNativeShare()
@@ -146,48 +137,23 @@ const goBack = () => {
 </div>
 
       <div class="share-section">
-        <h3>Share on Social media</h3>
+        <h3>Share on Whatsapp</h3>
 
         <div class="social-grid">
-          <button class="social-btn whatsapp" type="button"  @click="shareToWhatsApp"> <span class="social-icon-wrap whatsapp-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24" class="social-icon-svg">
-        <path
-          d="M12 3.2a8.6 8.6 0 0 0-7.43 12.94L3.4 20.6l4.59-1.14A8.6 8.6 0 1 0 12 3.2Zm0 15.66a7.04 7.04 0 0 1-3.58-.98l-.26-.15-2.72.67.72-2.64-.17-.27a7.04 7.04 0 1 1 6.01 3.37Zm3.86-5.24c-.21-.11-1.25-.61-1.44-.68-.19-.07-.33-.11-.46.11-.14.21-.53.68-.66.82-.12.14-.24.16-.45.05-.21-.11-.88-.32-1.67-1.02-.62-.55-1.03-1.22-1.15-1.43-.12-.21-.01-.32.09-.43.09-.09.21-.24.31-.36.1-.12.14-.21.21-.36.07-.14.03-.27-.02-.38-.05-.11-.46-1.12-.63-1.54-.17-.4-.34-.35-.46-.36h-.39c-.14 0-.36.05-.55.27-.19.21-.73.71-.73 1.72 0 1.01.75 1.98.85 2.12.1.14 1.45 2.22 3.51 3.11.49.21.87.34 1.17.44.49.16.93.14 1.28.09.39-.06 1.25-.51 1.42-1.01.18-.5.18-.93.12-1.01-.05-.09-.19-.14-.39-.25Z"
-          fill="currentColor"
-        />
-      </svg>
-    </span>
-    <span class="social-label">WhatsApp</span></button>
-          <button class="social-btn instagram" type="button"  @click="shareToInstagram"> <span class="social-icon-wrap instagram-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24" class="social-icon-svg">
-        <rect x="4.5" y="4.5" width="15" height="15" rx="4" ry="4" fill="none" stroke="currentColor" stroke-width="2" />
-        <circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="2" />
-        <circle cx="16.8" cy="7.2" r="1.1" fill="currentColor" />
-      </svg>
-    </span>
-    <span class="social-label">Instagram</span></button>
-
-          <button class="social-btn facebook" type="button" @click="shareToFacebookFeed"> <span class="social-icon-wrap facebook-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24" class="social-icon-svg">
-        <path
-          d="M13.35 20v-6.52h2.2l.33-2.54h-2.53V9.32c0-.74.2-1.24 1.27-1.24H16V5.8c-.23-.03-1.01-.1-1.92-.1-1.9 0-3.2 1.16-3.2 3.3v1.94H8.72v2.54h2.16V20h2.47Z"
-          fill="currentColor"
-        />
-      </svg>
-    </span>
-    <span class="social-label">Facebook Feed</span></button>
-
-          <button class="social-btn messenger" type="button"  @click="shareToMessenger"> <span class="social-icon-wrap messenger-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24" class="social-icon-svg">
-        <path
-          d="M12 4.2c-4.36 0-7.9 3.28-7.9 7.33 0 2.31 1.15 4.36 2.95 5.7V20l2.57-1.42c.69.19 1.42.29 2.18.29 4.36 0 7.9-3.28 7.9-7.34S16.36 4.2 12 4.2Zm.78 9.86-2.01-2.14-3.91 2.14 4.31-4.57 2.06 2.14 3.83-2.14-4.28 4.57Z"
-          fill="currentColor"
-        />
-      </svg>
-    </span>
-    <span class="social-label">Messenger</span></button>
+        <button class="social-btn whatsapp" type="button" @click="shareToWhatsApp">
+          <span class="social-icon-wrap whatsapp-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="social-icon-svg">
+              <path
+                d="M12 3.2a8.6 8.6 0 0 0-7.43 12.94L3.4 20.6l4.59-1.14A8.6 8.6 0 1 0 12 3.2Zm0 15.66a7.04 7.04 0 0 1-3.58-.98l-.26-.15-2.72.67.72-2.64-.17-.27a7.04 7.04 0 1 1 6.01 3.37Zm3.86-5.24c-.21-.11-1.25-.61-1.44-.68-.19-.07-.33-.11-.46.11-.14.21-.53.68-.66.82-.12.14-.24.16-.45.05-.21-.11-.88-.32-1.67-1.02-.62-.55-1.03-1.22-1.15-1.43-.12-.21-.01-.32.09-.43.09-.09.21-.24.31-.36.1-.12.14-.21.21-.36.07-.14.03-.27-.02-.38-.05-.11-.46-1.12-.63-1.54-.17-.4-.34-.35-.46-.36h-.39c-.14 0-.36.05-.55.27-.19.21-.73.71-.73 1.72 0 1.01.75 1.98.85 2.12.1.14 1.45 2.22 3.51 3.11.49.21.87.34 1.17.44.49.16.93.14 1.28.09.39-.06 1.25-.51 1.42-1.01.18-.5.18-.93.12-1.01-.05-.09-.19-.14-.39-.25Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <span class="social-label">WhatsApp</span>
+        </button>
         </div>
-      </div>
+</div>
+
 
       <div class="share-section">
         <h3>Share link</h3>
@@ -319,16 +285,18 @@ const goBack = () => {
 }
 
 .social-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  display: flex;
+   justify-content: center;
+  margin-top: 6px;
 }
 
 .social-btn {
-  min-height: 92px;
+  min-height: 110px;
+  width: 240px;
+  max-width: 100%;
   border-radius: 22px;
   border: 1px solid transparent;
-  font-size: 0.74rem;
+  font-size: 0.88rem;
   font-weight: 700;
   cursor: pointer;
   background: white;
@@ -336,29 +304,15 @@ const goBack = () => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   text-align: center;
-  padding: 10px 8px;
+  padding: 14px 12px;
 }
 .whatsapp {
   background: #dff5e5;
   border-color: #8ed6a1;
 }
 
-.instagram {
-  background: #f8e0ef;
-  border-color: #efafd6;
-}
-
-.facebook {
-  background: #dfe8fb;
-  border-color: #9db4ee;
-}
-
-.messenger {
-  background: #dfe8fb;
-  border-color: #aebff3;
-}
 
 .link-row {
   display: flex;
@@ -517,7 +471,8 @@ const goBack = () => {
   }
 
   .social-grid {
-    grid-template-columns: repeat(2, 1fr);
+     display: flex;
+  justify-content: center;
   }
 
   .link-row {
@@ -545,25 +500,12 @@ const goBack = () => {
   line-height: 1.1;
 }
 
+
 .whatsapp-icon {
   background: #25d366;
   color: #ffffff;
 }
 
-.instagram-icon {
-  background: linear-gradient(135deg, #f58529 0%, #dd2a7b 55%, #8134af 100%);
-  color: #ffffff;
-}
-
-.facebook-icon {
-  background: #1877f2;
-  color: #ffffff;
-}
-
-.messenger-icon {
-  background: #1e88ff;
-  color: #ffffff;
-}
 
 .share-now-icon {
   display: inline-flex;
