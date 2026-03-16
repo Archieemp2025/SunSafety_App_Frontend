@@ -51,7 +51,18 @@ const openSharePage = (card) => {
           <p class="fact-text">{{ card.fact }}</p>
         </div>
 
-        <button class="share-btn" type="button"  @click="openSharePage(card)">Share this</button>
+        <button class="share-btn" type="button" @click="openSharePage(card)">
+          <span class="share-btn-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="share-icon-svg">
+              <circle cx="6" cy="12" r="2.6" fill="currentColor" />
+              <circle cx="18" cy="6" r="2.6" fill="currentColor" />
+              <circle cx="18" cy="18" r="2.6" fill="currentColor" />
+              <line x1="8.2" y1="11" x2="15.6" y2="7.1" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+              <line x1="8.2" y1="13" x2="15.6" y2="16.9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+            </svg>
+          </span>
+          <span>Share this</span>
+        </button>
       </article>
     </div>
   </section>
@@ -159,6 +170,10 @@ const openSharePage = (card) => {
   font-size: 0.95rem;
   cursor: pointer;
   box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 @media (max-width: 900px) {
@@ -180,5 +195,17 @@ const openSharePage = (card) => {
   .myth-card {
     min-height: auto;
   }
+}
+  .share-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.share-icon-svg {
+  width: 16px;
+  height: 16px;
+  display: block;
 }
 </style>
