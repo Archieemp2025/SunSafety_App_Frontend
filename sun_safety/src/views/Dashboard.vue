@@ -38,10 +38,21 @@ const logout = () => {
             <UVChart />
         </div>
         <div class="myth-section-row">
-            <div class="myth-section-shell">
-                <MythBuster />
-            </div>
-        </div>
+  <div class="myth-section-shell">
+    <MythBuster />
+  </div>
+</div>
+
+<div class="group-banner-row">
+  <div class="group-banner">
+    <h3 class="group-banner-title">Make it a group thing</h3>
+    <p class="group-banner-text">
+      When your whole crew knows the facts, staying sun-safe becomes the norm, not the chore.
+      Share this with your mates and make UV awareness a social habit.
+      <span class="group-banner-emoji" aria-hidden="true">🙂</span>
+    </p>
+  </div>
+</div>
             
         
         
@@ -130,6 +141,42 @@ const logout = () => {
   max-width: 1200px;
 }
 
+.group-banner-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.group-banner {
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #f2b206 0%, #f68a2d 35%, #ff4b6d 65%, #ef00b8 100%);
+  color: #ffffff;
+  text-align: center;
+  padding: 18px 28px 20px;
+  box-sizing: border-box;
+}
+
+.group-banner-title {
+  margin: 0 0 6px;
+  font-size: 2rem;
+  line-height: 1.05;
+  font-weight: 800;
+}
+
+.group-banner-text {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.group-banner-emoji {
+  display: inline-block;
+  margin-left: 4px;
+}
 @media (max-width: 980px) {
     .charts-grid {
         grid-template-columns: 1fr;
@@ -137,6 +184,19 @@ const logout = () => {
     .myth-section-row{
         margin-top: 28px;
     }
+
+    .group-banner {
+  padding: 16px 18px 18px;
+  border-radius: 22px;
+}
+
+.group-banner-title {
+  font-size: 1.5rem;
+}
+
+.group-banner-text {
+  font-size: 0.9rem;
+}
 }
         
 </style>
